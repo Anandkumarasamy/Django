@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Employee detaile</h1><hr>
+    {% if Employee_list %}
+      <table>
+        <thead>
+          <th>Employee_Id</th>
+          <th>Employee_Name</th>
+          <th>Employee_Salary</th>
+          <th>Employee_Address</th>
+        </thead>
+        {% for emp in Employee_list %}
+          <tr>
+            <td>{{emp.eno}}</td>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.esalary}}</td>
+            <td>{{emp.eadress}}</td>
+          </tr>
+        {%endfor%}
+      </table>
+      {%else%}
+        <p>No Record Found</p>
+    {%endif%}
+  </body>
+</html>
